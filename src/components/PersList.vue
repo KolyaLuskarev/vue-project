@@ -1,10 +1,19 @@
 
 
-<script setup>
+<script >
 
-import FoodList from './FoodList.vue'
+import FoodList from '/home/nluskarev/vue-project/src/components/FoodList.vue'
 
 
+export default{
+ 
+ name:'app',
+ props:['persons'],
+ components:{
+   FoodList
+ }
+ 
+ }
 
 </script>
 
@@ -15,15 +24,27 @@ import FoodList from './FoodList.vue'
    
 
 
-    <div id="app">
-        <input type="text" v-model="name" @input="updateList">
+    
+    <div>
         <ul>
-            <li v-for="(item, index) in names" :key="index">{{ item }}</li>
-        </ul>
-    </div>
-<ul>Persons</ul>
-<FoodList/>
+    <FoodList 
+        v-for="(person, index) in persons" 
+        v-bind:key="index" 
+        :person="person"
+    />
+</ul>
+</div>
+
+
 
     </div>
 
 </template>
+
+<style scoped>
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+</style>

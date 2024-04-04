@@ -1,6 +1,25 @@
-<script setup>
-import PersList from './components/PersList.vue'
+<script>
 
+import PersList from '/home/nluskarev/vue-project/src/components/PersList.vue'
+
+export default{
+ 
+  name:'app',
+  data(){
+    return{
+    persons:[
+      {id:1,title: 'Sasha'},
+      {id:2, title: 'Dasha'},
+      {id:3, title: 'Pasha'}
+    ]
+    }
+  },
+ 
+ components:{
+   PersList
+ }
+ 
+ }
 
 
 </script>
@@ -11,7 +30,9 @@ import PersList from './components/PersList.vue'
     <div class="wrapper">
    <h1> Split bill</h1>
    <hr>
-   <PersList/>
+   <PersList
+   v-bind:persons="persons"
+   />
     </div>
   </header>
 
