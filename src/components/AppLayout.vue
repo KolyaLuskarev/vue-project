@@ -1,17 +1,23 @@
  <script setup>
-const props = defineProps({
-
-    imgUrl: {
+const props= defineProps({
+    Declar: {
         type: String,
         required: true,
     },
+
+
 });
 </script>
 
  <template>
     <div class="root">
-        <div :style="`background-image: url( ${imgUrl} )`" class="img"></div>
-        <div class="main"></div>
+        <RouterLink :to="'/addusers'">
+       <div class="main">
+        <div class="btn">
+            <v-btn color="error" dark large>{{ Declar }}</v-btn>
+          </div>
+       </div>
+    </RouterLink>
     </div>
  </template>
 
@@ -23,12 +29,19 @@ const props = defineProps({
     displey: flex
     min-height: 100vh
     background-color: $background
-.img
-    width: 50px
-    background-position: 50px 50px
-    background-repeat: no-repeat
-    background-size: cover
+
 .main
-    width: 50px
+    padding: 10px 20px
+    position: relative
+
+.btn
+    display: flex
+    align-items: center
+    justify-content:  center
+
+ 
+
+    
+    
 
 </style>

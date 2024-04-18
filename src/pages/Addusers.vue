@@ -1,6 +1,12 @@
-<script setup></script>
+<script setup>
+import AppLayout from '../components/AppLayout.vue';
 
-<template></template>
+</script>
+
+<template>Users
+
+<AppLayout Declar="Add Dishes"  NextLink="/calculate"/>
+</template>
 
 
 <style lang="sass" scoped>
