@@ -1,4 +1,8 @@
  <script setup>
+ import { useCounterStore } from '@/stores/root';
+ import InputName from '../components/InputName.vue'
+ const counter = useCounterStore()
+ counter.addTodo("vanya")
 const props= defineProps({
     Declar: {
         type: String,
@@ -7,12 +11,17 @@ const props= defineProps({
 
 
 });
+
 </script>
 
  <template>
+    
+
     <div class="root">
         <RouterLink :to="'/addusers'">
        <div class="main">
+        <InputName/>
+        <div>Current Count: {{ counter.names }}</div>
         <div class="btn">
             <v-btn color="error" dark large>{{ Declar }}</v-btn>
           </div>
@@ -44,4 +53,4 @@ const props= defineProps({
     
     
 
-</style>
+</style>@/stores/root
