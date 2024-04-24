@@ -4,7 +4,7 @@ import { useFoodStore } from '@/stores/useFoodStore'
 import InputFood from '../components/InputFoodForm.vue'
 import Butt from '../components/AppButton.vue'
 const store = useNamesStore()
-const foodStode = useFoodStore()
+const foodStore = useFoodStore()
 
 </script>
 
@@ -24,19 +24,28 @@ const foodStode = useFoodStore()
        </RouterLink>
        
       <div>Current Count: {{ store.names }}</div>
-      <div> Dishes: {{  foodStode.foodList  }}    </div>
+      <div> Dishes: {{  foodStore.foodList  }}    </div>
+
+
+      <div>
 
       <v-card
     class="mx-auto"
     max-width="300"
   >
   <v-list
-      :items="store.names"
-      item-title="name"
+      :items="foodStore.foodList"
+      item-title="foodName"
       item-value="id"
     ></v-list>    
+    <v-list
+      :items="foodStore.foodPrice"
+      item-title="foodPrice"
+      item-value="id"
+    ></v-list>  
   </v-card>
 
+</div>
       </div>
   
    </div>
