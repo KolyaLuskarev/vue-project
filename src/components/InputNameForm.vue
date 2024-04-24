@@ -4,7 +4,7 @@
       <v-text-field
         v-model="newName"
         :rules="rules"
-        label="First name"
+        label="Name of customer"
       ></v-text-field>
       <v-btn class="mt-2" type="submit" block>Submit</v-btn>
     </v-form>

@@ -1,8 +1,10 @@
 <script setup>
 import { useNamesStore } from '@/stores/root';
-import InputNameForm from '../components/InputNameForm.vue'
+import { useFoodStore } from '@/stores/useFoodStore'
+import InputFood from '../components/InputFoodForm.vue'
 import Butt from '../components/AppButton.vue'
 const store = useNamesStore()
+const foodStode = useFoodStore()
 
 </script>
 
@@ -12,6 +14,8 @@ const store = useNamesStore()
    <div class="root">
      
       <div class="main">
+
+         <InputFood/>
        
          <RouterLink :to=" '/result'">
 
@@ -20,6 +24,7 @@ const store = useNamesStore()
        </RouterLink>
        
       <div>Current Count: {{ store.names }}</div>
+      <div> Dishes: {{  foodStode.foodList  }}    </div>
 
       <v-card
     class="mx-auto"
