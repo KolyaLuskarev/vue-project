@@ -1,16 +1,11 @@
  <script setup>
- import { useCounterStore } from '@/stores/root';
- import InputName from '../components/InputName.vue'
- const counter = useCounterStore()
- counter.addTodo("vanya")
-const props= defineProps({
-    Declar: {
-        type: String,
-        required: true,
-    },
+ import { useNamesStore } from '@/stores/root';
+ import InputNameForm from '../components/InputNameForm.vue'
+ import Butt from '../components/AppButton.vue'
+const store = useNamesStore()
 
 
-});
+
 
 </script>
 
@@ -18,15 +13,15 @@ const props= defineProps({
     
 
     <div class="root">
-        <RouterLink :to="'/addusers'">
+      
        <div class="main">
-        <InputName/>
-        <div>Current Count: {{ counter.names }}</div>
-        <div class="btn">
-            <v-btn color="error" dark large>{{ Declar }}</v-btn>
-          </div>
+        
+        <Butt Declar="Split Bill"  />
+        
+       <div>Current Count: {{ store.names }}</div>
+        
        </div>
-    </RouterLink>
+   
     </div>
  </template>
 
@@ -43,10 +38,6 @@ const props= defineProps({
     padding: 10px 20px
     position: relative
 
-.btn
-    display: flex
-    align-items: center
-    justify-content:  center
 
  
 
