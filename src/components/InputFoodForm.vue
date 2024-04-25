@@ -1,6 +1,6 @@
 <template>
     <v-sheet class="mx-auto" width="300">
-   <v-form @submit.prevent="storeFood.addFood(foodName,foodPrise, custName)">
+   <v-form @submit.prevent="storeFood.addFood(foodName,foodPrise, selectedNames)">
      <v-text-field
        v-model="foodName"
        :rules="rules"
@@ -12,15 +12,22 @@
        label="Prise of dish"
      ></v-text-field>
 
-     <v-radio-group v-model="custName">
-      <v-radio
+     <v-list>
+      <v-list-item
         v-for="name in storeNames.names"
         :key="name.id"
-        :label="name.name"
-        :value="name.name"
-      ></v-radio>
-    </v-radio-group>
-     
+      >
+        <v-list-item-action>
+          <v-checkbox
+            v-model="selectedNamesIds"
+            :value="name.id"
+          ></v-checkbox>
+        </v-list-item-action>
+        <v-list-item-content>
+          <v-list-item-title>{{ name.name }}</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+    </v-list>
      <v-btn class="mt-2" type="submit" block>Submit</v-btn>
    </v-form>
  </v-sheet>
@@ -32,9 +39,15 @@ import { useNamesStore } from '@/stores/root';
 
 const storeFood = useOrderStore();
 const storeNames= useNamesStore();
-const custName= ref("");
+
 const foodName=ref("");
 const foodPrise=ref("");
+
+const selectedNamesIds = ref([]);
+
+const selectedNames = computed(() => {
+  return storeNames.names.filter(name => selectedNamesIds.value.includes(name.id));
+});
 
 
 </script>

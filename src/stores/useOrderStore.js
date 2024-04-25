@@ -12,10 +12,11 @@ export const useOrderStore = defineStore('foodList', {
     names: [],
   }),
   actions: {
-    addFood(foodName, foodPrise, name) {
+    addFood(foodName, foodPrise, newNames) {
       this.foodList.push({ foodName, foodPrise,  foodID: this.foodID++ })
+      this.names.concat({newNames}) 
+      this.names.push({  orderID: this.orderID++ })
       
-      this.names.push({ name, orderID: this.orderID++ })
     },
   },
 })
