@@ -1,10 +1,10 @@
 <script setup>
 import { useNamesStore } from '@/stores/root';
-import { useFoodStore } from '@/stores/useFoodStore'
+import { useOrderStore } from '@/stores/useOrderStore'
 import InputFood from '../components/InputFoodForm.vue'
 import Butt from '../components/AppButton.vue'
 const store = useNamesStore()
-const foodStore = useFoodStore()
+const foodStore = useOrderStore()
 
 </script>
 
@@ -24,7 +24,9 @@ const foodStore = useFoodStore()
        </RouterLink>
        
       <div>Current Count: {{ store.names }}</div>
-      <div> Dishes: {{  foodStore.foodList  }}    </div>
+      <div> Dishes: {{  foodStore.foodList  }}   </div>
+      <div>  Customers: {{  foodStore.names   }}  </div>
+      <div>  Customers: {{  foodStore.orderID   }}  </div>
 
 
       <div>
@@ -70,4 +72,4 @@ const foodStore = useFoodStore()
    
    
 
-</style>@/stores/root
+</style>@/stores/root@/stores/useOrderStore
