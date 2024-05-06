@@ -25,8 +25,7 @@ const foodStore = useOrderStore()
        
       <div>Current Count: {{ store.names }}</div>
       <div> Dishes: {{  foodStore.foodList  }}   </div>
-      <div>  Customers: {{  foodStore.names   }}  </div>
-      <div>  Customers: {{  foodStore.orderID   }}  </div>
+      
 
 
       <div>
