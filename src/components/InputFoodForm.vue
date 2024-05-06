@@ -63,5 +63,7 @@ const selectedNames = computed(() => {
 
 </script>
 
-<style scoped></style>
+<style lans="sass" scoped>
+@import '../assets/styles/main.sass'
+</style>
 @/stores/useOrderStore
