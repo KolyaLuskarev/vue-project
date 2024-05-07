@@ -12,6 +12,19 @@ export const useOrderStore = defineStore('foodList', {
   }),
   actions: {
     addFood(foodName, foodPrise, custNames, payerName) {
+
+
+    const numericPrise = parseFloat(foodPrise);
+    if (isNaN(numericPrise)) {
+      // Обработка ошибки: foodPrise не является числом
+      alert('Price must be a number!');
+      return; 
+    }
+
+
+
+
+
       this.foodList.push(
         { foodName,
           foodPrise,

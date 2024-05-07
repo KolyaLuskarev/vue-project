@@ -23,8 +23,6 @@ const foodStore = useOrderStore()
 
        </RouterLink>
        
-      <div>Current Count: {{ store.names }}</div>
-      <div> Dishes: {{  foodStore.foodList  }}   </div>
       
 
 

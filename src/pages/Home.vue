@@ -22,7 +22,7 @@ const store = useNamesStore()
 
        </RouterLink>
        
-      <div>Current Count: {{ store.names }}</div>
+     
        
       </div>
   

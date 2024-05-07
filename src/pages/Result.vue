@@ -13,14 +13,14 @@ const debtors= foodStore.debtors
 
 </script>
 
-<template>Result
+<template>
 
 <div class="root">
      
      <div class="main">
 
 
-      <div>
+      <div class="debtors">
     <h2>Должники:</h2>
     <ul v-if="debtors.length > 0">
       <li v-for="debtor in debtors" :key="debtor.id">
@@ -66,4 +66,17 @@ const debtors= foodStore.debtors
    padding: 10px 20px
    position: relative
 
+.debtors
+  
+  vertical-align: middle
+  display: table
+  height: 100vh
+  width: 100% 
+  text-align: center
+  width: 100%
+
+  h2, ul, p
+     width: 100%
+
+     
 </style>@/stores/root@/stores/useOrderStore
