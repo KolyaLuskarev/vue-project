@@ -11,7 +11,7 @@ export const useNamesStore = defineStore('store', {
   }),
   actions: {
     // любое количество аргументов, возвращает Promise или нет
-    async addName(name) {
+    addName(name) {
      
       // можно изменять состояние напрямую
       this.names.push({ name, id: this.nextId++ })

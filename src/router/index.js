@@ -1,34 +1,27 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../pages/Home.vue'
-import Addusers from '../pages/Addusers.vue'
-import Calculate from '../pages/Calculate.vue'
-import Result from '../pages/Result.vue'
-
-
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: () => import('../pages/HomePage.vue')
     },
     {
       path: '/addusers',
       name: 'addusers',
-      component:  Addusers
+      component: () => import('../pages/AddusersPage.vue')
     },
     {
       path: '/result',
       name: 'result',
-      component: Result
+      component: () => import('../pages/ResultPage.vue')
     },
     {
       path: '/calculate',
       name: 'calculate',
-      component: Calculate
-    },
-   
+      component: () => import('../pages/CalculatePage.vue')
+    }
   ]
 })
 
